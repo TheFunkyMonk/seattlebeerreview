@@ -13,10 +13,10 @@
 
       <div class="entry-meta beer-info">
         <p>
-          <span><strong>Style:</strong> <?php the_field('style'); ?></span><span>|</span>
-          <span><strong> ABV:</strong> <?php the_field('abv'); ?>%</span><span>|</span>
-          <span><strong> Availability:</strong> <?php the_field('availability'); ?></span><span>|</span>
-          <span><strong> Location:</strong> <?php the_field('location'); ?></span>
+          <span><strong>Style:</strong> <?php $term = get_the_terms($post->ID, 'style'); echo $term[0]->name; ?></span><span>|</span>
+          <span><strong> ABV:</strong> <?php $term = get_the_terms($post->ID, 'abv'); echo $term[0]->name; ?>%</span><span>|</span>
+          <span><strong> Availability:</strong> <?php $term = get_the_terms($post->ID, 'availability'); echo $term[0]->name; ?></span><span>|</span>
+          <span><strong> Location:</strong> <?php $term = get_the_terms($post->ID, 'location'); echo $term[0]->name . ', ' . $term[1]->name; ?></span>
         </p>
       </div>
 
